@@ -1,1 +1,1 @@
-web: gunicorn bearbridle.wsgi
+web: gunicorn bearabridle.wsgi
