@@ -1,1 +1,1 @@
-web: gunicorn trail.wsgi
+web: gunicorn bearbridle.wsgi
