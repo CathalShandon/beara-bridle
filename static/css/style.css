@@ -36,6 +36,11 @@ body {
 
 .image-container {
     position: relative;
+   
+}
+.card-img-top {
+    width: %;
+    height: 20%;
 }
 
 .image-flash {
@@ -70,6 +75,8 @@ body {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    width: auto;
+    height: auto;
 }
 
 .masthead-image:after {

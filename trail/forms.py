@@ -1,13 +1,12 @@
+# Imports #
 from django import forms
 from .models import Comment
 
 
-"""
- The comment form
-"""
-
-
 class CommentForm(forms.ModelForm):
+    """
+    The comment form
+    """
     class Meta:
         model = Comment
         fields = ('body',)
