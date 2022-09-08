@@ -1,6 +1,11 @@
 body {
     background-color: #F9FAFC;
 }
+.header {
+    position: relative;
+    text-align: center;
+    padding-top: 1rem;
+}
 
 .brand {
     font-family: Lato, sans-serif;
@@ -89,6 +94,14 @@ body {
     z-index: 100;
 }
 
+.info {
+    padding: 2rem 5rem 2rem 5rem
+}
+.info-img {
+    width: 40%;
+    height: 50%;
+  
+}
 .post-link {
     text-decoration: none;
     color: #445261;
