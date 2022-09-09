@@ -88,3 +88,11 @@ def AboutUs(request):
         render about us page
     """
     return render(request, 'aboutus.html')
+
+
+def Trail(request):
+    """
+        Renders the page with trails
+
+    """
+    return render(request, 'trails.html')

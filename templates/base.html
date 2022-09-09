@@ -42,6 +42,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'aboutus' %}">About us <i class="fa-solid fa-circle-info"></i></a>
                     </li>
+                    <li class="nav-item" > 
+                        <a class="nav-link" href="{% url 'trail' %}">Trails <i class="fa-solid fa-horse-saddle"></i></a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -72,15 +75,13 @@
                 </div>
 
                 {% endfor %}
+
             </div>
         </div>
     </div>
 
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-    </main>
+    
+    
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
