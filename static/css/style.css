@@ -39,6 +39,9 @@ body {
     background-color: transparent;
 }
 
+.about-img {
+    flex-direction:column;
+}
 .image-container {
     position: relative;
    
@@ -52,6 +55,13 @@ body {
     background-color: #23BBBB;
 }
 
+.img-fluid {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 37%;
+}
 .info-img-1 {
     float: right;
     width: 50%;
@@ -166,4 +176,19 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .info {
+        padding: 1rem 3rem 1rem 3rem;
+    }
+    .info-img-1 {
+        width: 100%;
+    }
+    .info-img-2 {
+        width: 100%;
+    }
+    .img-fluid {
+        width: 75%;
+    }
 }
