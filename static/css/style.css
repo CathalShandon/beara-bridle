@@ -64,14 +64,14 @@ body {
 }
 .info-img-1 {
     float: right;
-    width: 50%;
-    padding: 1.5rem;
+    width: 45%;
+    padding: 0.5rem;
 }
 
 .info-img-2 {
     float: left;
-    width: 50%;
-    padding: 1.5rem;
+    width: 45%;
+    padding: 0.5rem;
 }
 .author {
     color: white;
