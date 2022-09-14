@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'trail',
+    'star_ratings',
     'django_summernote',
     'crispy_forms',
 ]
