@@ -78,6 +78,11 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+
+
+    
+
+
 def Home(request):
     """
         Renders the page with trails
@@ -95,3 +100,4 @@ def AboutUs(request):
         render about us page
     """
     return render(request, 'aboutus.html')
+

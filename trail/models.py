@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from star_ratings.models import Rating
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -45,3 +47,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+class Rating(models.Model):
+    score = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0),
+        ]
+    )
+
+    def __str__(self):
+        return str(self.pk)
