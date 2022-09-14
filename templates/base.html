@@ -28,35 +28,35 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #445261;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Beara Horse Trail</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            <a class="navbar-brand text-white" style="background-color: #445261;" href="{% url 'home' %}">Beara Horse Trail</a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse text-white" id="navbarText">
+                <ul class="navbar-nav fixed-right  me-auto mb-2 mb-lg-0 text-white">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home <i class="fa-solid fa-house"></i></a>
+                        <a class="nav-link active text-white" aria-current="page" href="{% url 'home' %}">Home <i class="fa-solid fa-house"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'aboutus' %}">About us <i class="fa-solid fa-circle-info"></i></a>
+                        <a class="nav-link text-white" href="{% url 'aboutus' %}">About us <i class="fa-solid fa-circle-info"></i></a>
                     </li>
-                    <li class="nav-item" > 
-                        <a class="nav-link" href="{% url 'trail' %}">Trails <i class="fa-solid fa-horse-saddle"></i></a>
+                    <li class="nav-item"> 
+                        <a class="nav-link text-white" href="{% url 'trail' %}">Trails <i class="fa-solid fa-horse-saddle"></i></a>
                     </li>
                    
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link text-white" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register <i class="fa-solid fa-user"></i></a>
+                        <a class="nav-link text-white" href="{% url 'account_signup' %}">Register <i class="fa-solid fa-user"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login <i class="fa-solid fa-right-to-bracket"></i></a>
+                        <a class="nav-link text-white" href="{% url 'account_login' %}">Login <i class="fa-solid fa-right-to-bracket"></i></a>
                     </li>
                     {% endif %}
 
@@ -103,15 +103,15 @@
             
               <a href="https://www.facebook.com" target="_blank" rel="noreferrer"
                     aria-label="Go to our facebook page (opens in new tab)" title="facebook">
-                    <i class="fab fa-facebook-square ms-3"></i></a>
+                    <i class="fab fa-facebook-square ms-3 text-white"></i></a>
             
                 <a href="https://www.twitter.com" target="_blank" rel="noreferrer"
                     aria-label="Go to our twitter page (opens in new tab)" title="twitter"><i
-                        class="fab fa-twitter-square ms-3"></i></a>
+                        class="fab fa-twitter-square ms-3 text-white"></i></a>
         
                 <a href="https://www.instagram.com" target="_blank" rel="noreferrer"
                     aria-label="Go to our instagram page (opens in new tab)" title="instagram"><i
-                        class="fab fa-instagram-square ms-3"></i></a>
+                        class="fab fa-instagram-square ms-3 text-white"></i></a>
         </p>
     </footer>
     <script>

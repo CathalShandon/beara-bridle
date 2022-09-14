@@ -80,7 +80,7 @@ class PostLike(View):
 
 def star_ratings(request):
     obj = Star.objects.filter(score=0).order_by("?").first()
-    context ={
+    context = {
         'object': obj
     }
     return render(request, '/post_detail.html', context)
@@ -103,4 +103,3 @@ def AboutUs(request):
         render about us page
     """
     return render(request, 'aboutus.html')
-
