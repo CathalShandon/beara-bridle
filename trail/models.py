@@ -51,15 +51,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-class Star(models.Model):
-    score = models.IntegerField(default=0,
-        validators=[
-            MaxValueValidator(5),
-            MinValueValidator(0),
-        ]
-    )
-
-    def __str__(self):
-        return str(self.pk)
