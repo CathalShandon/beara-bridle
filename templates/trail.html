@@ -1,8 +1,88 @@
 {% extends "base.html" %}
 {% load static %}
 
-
 {% block content %}
 
+{% if messages %}
+<div class="alert alert-secondary alert-dismissible" role="alert">
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.success %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+
+<div class="container">
+    <div class="mt-5">
+        <h1 class="text-center mb-5">View the post lists</h1>
+        <!-- Forum Entries Cards -->
+        {% for post in post_list %}
+
+        <div class="row">
+
+            <div class="card mb-3">
+                <div class="row g-0　row-eq-height">
+
+                    <div class="col-md-4 image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img" src="{% static 'images/default_image.png' %}"
+                            alt="default post image of a dog on a trail">
+                        {% else %}
+                        <img class="card-img" src=" {{ post.featured_image.url }}"
+                            alt="image posted by the user relating to thier post">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ post.title }}</h3>
+                            <h5 class="card-title">Location: {{ post.location }}</h5>
+                            <p class="card-text">{{ post.excerpt }}</p>
+                            <p class="card-text">Posted by: {{ post.author | title }}</p>
+                            <div class="d-flex justify-content-around">
+                                {% if user.is_authenticated %}
+
+                                {% if post.author.id == user.id %}
+                                <div>
+                                    <a class="btn btn-outline-dark btn-sm" href="{% url 'post_edit' post.slug %}"
+                                        role="button">Edit</a>
+                                </div>
+                                {% endif %}
+                                <div>
+                                    <a class="btn btn-success btn-sm bg-gradient"
+                                        href="{% url 'post_detail' post.slug %}" role="button">View the post</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 {%endblock%}

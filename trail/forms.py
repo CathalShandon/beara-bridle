@@ -1,5 +1,6 @@
 # Imports #
 from django import forms
+from django.core import validators
 from .models import Comment, Post
 
 
@@ -30,7 +31,6 @@ class CreatePostForm(forms.ModelForm):
                             label='Post Content',
                             max_length=1500,
                             widget=forms.Textarea)
-    
 
     class Meta:
         model = Post
@@ -85,5 +85,3 @@ class DeletePostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = []
-
-

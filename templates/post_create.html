@@ -4,20 +4,7 @@
 {% block content %}
 
 <section>
-        {% if create_post_form.errors or  messages %}
-        <div class="alert alert-secondary alert-dismissible" role="alert">
-                <ul class="messages">
-                       
-                        {% for key, value in create_post_form.errors.items %}
-                        <li class="{{ message.tags }} d-inline me-3">{{key | title }}: {{value.as_text}}</li>
-                        {% endfor %}
-                        {% for message in messages %}
-                        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                        {% endfor %}
-                </ul>
-        </div>
-        {% endif %}
-
+      
         <div class="ms-2 me-2">
 
                 <h2 class="text-center mt-5">Create a Post</h2>
@@ -40,27 +27,7 @@
                                         <p class="create-titile">{{ create_post_form.content }}</p>
                                         <p class="create-label">{{ create_post_form.featured_image.label }} :</p>
                                         <p class="create-titile">{{ create_post_form.featured_image }}</p>
-                                        <div class="mb-1">
-                                                <p class="create-label">Difficulty of the trail</p>
-                                                <span class="ms-3">{{ create_post_form.difficulty_hard.label }} :
-                                                </span>
-                                                <span>{{ create_post_form.difficulty_hard }}</span>
-                                                <span class="ms-3">{{ create_post_form.difficulty_moderate.label }} :
-                                                </span>
-                                                <span>{{ create_post_form.difficulty_moderate }}</span>
-                                                <span class="ms-3">{{ create_post_form.difficulty_easy.label }}: </span>
-                                                <span>{{ create_post_form.difficulty_easy }}</span>
-                                        </div>
-                                        <div class="mb-1">
-                                                <p class="create-label">Suitable Dog size</p>
-                                                <span class="ms-3">{{ create_post_form.breed_big.label }} : </span>
-                                                <span>{{ create_post_form.breed_big }}</span>
-                                                <span class="ms-3">{{ create_post_form.breed_mid.label }} : </span>
-                                                <span>{{ create_post_form.breed_mid }}</span>
-                                                <span class="ms-3">{{ create_post_form.breed_sml.label }} : </span>
-                                                <span>{{ create_post_form.breed_sml }}</span>
-                                        </div>
-
+                                        
                                         <input type="submit" value="Create"
                                                 class="btn btn-success bg-gradient mb-5 mt-3 create-btn">
                                 </form>

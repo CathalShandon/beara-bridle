@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.views import generic, View
-from django.http import HttpResponseRedirect
-from .models import Post, Star
-from .forms import CommentForm
+from django.http import HttpResponseRedirect, Http404
+from .forms import CommentForm, CreatePostForm, EditPostForm, DeletePostForm
+from .models import Post
 
 
 class PostList(generic.ListView):
@@ -14,9 +16,10 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-      """Displays Post detail page."""
-    @method_decorator(login_required, name='home')
+    """Displays Post detail page."""
+
     def get(self, request, slug, *args, **kwargs):
+
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -25,16 +28,16 @@ class PostDetail(View):
             liked = True
 
         return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
+                request,
+                "post_detail.html",
+                {
+                    "post": post,
+                    "comments": comments,
+                    "commented": False,
+                    "liked": liked,
+                    "comment_form": CommentForm()
+                },
+            )
 
     def post(self, request, slug, *args, **kwargs):
 
@@ -45,28 +48,28 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        comment_form = CommentForm(data=request.POST)
+            comment_form = CommentForm(data=request.POST)
 
-        if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
-            comment_form.instance.name = request.user.username
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-        else:
-            comment_form = CommentForm()
+            if comment_form.is_valid():
+                comment_form.instance.email = request.user.email
+                comment_form.instance.name = request.user.username
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.save()
+            else:
+                comment_form = CommentForm()
 
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "liked": liked,
-                "comment_form": CommentForm()
-            },
-        )
+            return render(
+                request,
+                "post_detail.html",
+                {
+                    "post": post,
+                    "comments": comments,
+                    "commented": True,
+                    "liked": liked,
+                    "comment_form": CommentForm()
+                },
+            )
 
 
 class PostLike(View):
@@ -115,7 +118,7 @@ def edit_post(request, slug):
     if edit_post_form.is_valid():
         edit_post_form.save()
         messages.success(request, 'Your post is successfully updated')
-        return redirect('posts')
+        return redirect('trail')
     return render(
                 request, 'post_edit.html',
                 context={
@@ -124,6 +127,7 @@ def edit_post(request, slug):
                 )
 
 
+@login_required
 def delete_post(request, slug):
     """Displays Delete post page"""
     post = get_object_or_404(Post, slug=slug)
@@ -141,10 +145,9 @@ def delete_post(request, slug):
             )
 
 
-
 def Home(request):
     """
-        Renders the page with trails
+        Renders the home page 
 
     """
     return render(request, 'base.html')
