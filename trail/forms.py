@@ -96,7 +96,7 @@ class ProfileEditForm(forms.ModelForm):
                             max_length=300,
                             widget=forms.Textarea)
     about_dog = forms.CharField(
-                            label='About My Dog(s):',
+                            label='About My Horse:',
                             required=False,
                             max_length=300,
                             widget=forms.Textarea)

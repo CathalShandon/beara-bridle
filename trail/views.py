@@ -1,10 +1,13 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from django.views import generic, View
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect, Http404
 from .forms import CommentForm, CreatePostForm, EditPostForm, DeletePostForm
+from .forms import ProfileEditForm
+from django.views import generic, View
+from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect, Http404
+from django.contrib import messages
+from django.contrib.auth.models import User
 from .models import Post, Profile
 
 
@@ -159,7 +162,7 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Your profile is successfully updated')
-            return redirect('posts')
+            return redirect('profile')
         else:
             messages.error(request,
                            ('Update failed. Please ensure'
