@@ -2,9 +2,10 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views import generic, View
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, Http404
 from .forms import CommentForm, CreatePostForm, EditPostForm, DeletePostForm
-from .models import Post
+from .models import Post, Profile
 
 
 class PostList(generic.ListView):
@@ -143,6 +144,52 @@ def delete_post(request, slug):
                 'post_delete.html',
                 context={'delete_post_form': delete_post_form, }
             )
+
+
+@login_required
+def edit_profile(request):
+    """ Display the user's profile to edit """
+    profile = get_object_or_404(Profile, user=request.user)
+
+    if request.method == 'POST':
+        form = ProfileEditForm(
+                            request.POST or None,
+                            request.FILES,
+                            instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile is successfully updated')
+            return redirect('posts')
+        else:
+            messages.error(request,
+                           ('Update failed. Please ensure'
+                            'the form is valid.'))
+    else:
+        form = ProfileEditForm(instance=profile)
+    template = 'profile_edit.html'
+    context = {'form': form, }
+
+    return render(request, template, context)
+
+
+class ProfileList(LoginRequiredMixin, generic.ListView):
+    """Displays the member list page"""
+    model = Profile
+    queryset = Profile.objects.all()
+    template_name = "profile.html"
+    paginate_by = 8
+
+
+class ProfileDetail(LoginRequiredMixin, generic.DetailView):
+    """Displays profile detail page"""
+    model = Profile
+    queryset = Profile.objects.all()
+    template_name = 'profile_detail.html'
+
+    def get_object(self):
+        return get_object_or_404(
+                                Profile,
+                                user__username=self.kwargs['username'])
 
 
 def Home(request):
