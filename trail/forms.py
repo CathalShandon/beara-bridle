@@ -1,7 +1,7 @@
 # Imports #
 from django import forms
 from django.core import validators
-from .models import Comment, Post
+from .models import Comment, Post, Profile
 
 
 class CommentForm(forms.ModelForm):
@@ -85,3 +85,29 @@ class DeletePostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = []
+
+
+class ProfileEditForm(forms.ModelForm):
+
+    featured_image = forms.FileField(label='Image')
+    about_me = forms.CharField(
+                            label='About Me:',
+                            required=False,
+                            max_length=300,
+                            widget=forms.Textarea)
+    about_dog = forms.CharField(
+                            label='About My Dog(s):',
+                            required=False,
+                            max_length=300,
+                            widget=forms.Textarea)
+    favorite_location = forms.CharField(
+                                    label='My Favorite Location:',
+                                    required=False,
+                                    max_length=100,
+                                    widget=forms.Textarea, )
+
+    class Meta:
+        model = Profile
+        fields = (
+                'featured_image', 'about_me',
+                'about_dog', 'favorite_location')
