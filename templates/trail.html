@@ -28,8 +28,8 @@
 
                     <div class="col-md-4 image-container">
                         {% if "placeholder" in post.featured_image.url %}
-                        <img class="card-img" src="{% static 'images/default_image.png' %}"
-                            alt="default post image of a dog on a trail">
+                        <img src="{https://res.cloudinary.com/shandon/image/upload/v1663145377/S32_kgqhen.jpg}" class="card-img"
+                            alt="default post image of a horse on a trail">
                         {% else %}
                         <img class="card-img" src=" {{ post.featured_image.url }}"
                             alt="image posted by the user relating to thier post">

@@ -16,9 +16,9 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in profile.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/no_user_image.jpg' %}" alt="default no photo image">
+                                <img class="card-img-top" src="https://asset.cloudinary.com/shandon/7e10ce8d0b9f3ed79de849c6a1f5e5aa" alt="default no photo image">
                                 {% else %}
-                                <img class="card-img-top" src="{{ profile.featured_image.url }}" alt="Image posted by the user for thier profile">
+                                <img class="card-img-top" src="{{ profile.featured_image.url }}" alt="Image posted by the user for their profile">
                                 {% endif %}
                             </div>
                             <h2 class="author text-black">{{ profile.user.username | title }}</h2>

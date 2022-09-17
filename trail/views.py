@@ -52,28 +52,28 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-            comment_form = CommentForm(data=request.POST)
+        comment_form = CommentForm(data=request.POST)
 
-            if comment_form.is_valid():
-                comment_form.instance.email = request.user.email
-                comment_form.instance.name = request.user.username
-                comment = comment_form.save(commit=False)
-                comment.post = post
-                comment.save()
-            else:
-                comment_form = CommentForm()
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            comment_form = CommentForm()
 
-            return render(
-                request,
-                "post_detail.html",
-                {
-                    "post": post,
-                    "comments": comments,
-                    "commented": True,
-                    "liked": liked,
-                    "comment_form": CommentForm()
-                },
-            )
+        return render(
+            request,
+            "post_detail.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": True,
+                "liked": liked,
+                "comment_form": CommentForm()
+            },
+        )
 
 
 class PostLike(View):
@@ -99,7 +99,7 @@ def create_post(request):
                     request,
                     'Your post is successfully submitted'
                     'and is awaiting for approval')
-        return redirect('posts')
+        return redirect('trail')
     return render(
                 request,
                 'post_create.html',
@@ -121,7 +121,7 @@ def edit_post(request, slug):
                                 )
     if edit_post_form.is_valid():
         edit_post_form.save()
-        messages.success(request, 'Your post is successfully updated')
+        messages.success(request, 'Your post is successfully updated ')
         return redirect('trail')
     return render(
                 request, 'post_edit.html',
@@ -141,7 +141,7 @@ def delete_post(request, slug):
     if delete_post_form.is_valid():
         post.delete()
         messages.success(request, 'Your post is successfully deleted')
-        return redirect('posts')
+        return redirect('trail')
     return render(
                 request,
                 'post_delete.html',

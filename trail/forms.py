@@ -95,7 +95,7 @@ class ProfileEditForm(forms.ModelForm):
                             required=False,
                             max_length=300,
                             widget=forms.Textarea)
-    about_dog = forms.CharField(
+    about_horse = forms.CharField(
                             label='About My Horse:',
                             required=False,
                             max_length=300,
@@ -110,4 +110,4 @@ class ProfileEditForm(forms.ModelForm):
         model = Profile
         fields = (
                 'featured_image', 'about_me',
-                'about_dog', 'favorite_location')
+                'about_horse', 'favorite_location')

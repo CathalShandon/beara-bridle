@@ -144,7 +144,7 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #077623;
     color: #fff;
 }
 
@@ -155,7 +155,7 @@ body {
 }
 
 .link {
-    color: #23BBBB;
+    color: #077623;
     text-decoration: none;
 }
 
@@ -176,6 +176,10 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.edit-post {
+    text-align: center;
 }
 
 @media screen and (max-width: 1200px) {
