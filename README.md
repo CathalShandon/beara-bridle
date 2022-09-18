@@ -89,9 +89,9 @@ To create an online blog about the different trails where user can login, view a
 I used Balsamiq to create wireframes for my project in order to plan out the layout of the interface, navigation and information design of the site on desktop, tablets and mobile devices.
 Page | Desktop Version | Mobile Version
 --- | --- | ---
-Index / User Logged Out | ![Desktop index / user logged out wireframe image](assets/wireframes/index_dektop_logged_out.png) | ![Mobile index / user logged out wireframe image](assets/wireframes/index_mobile_logged_out.png)
+Home Page| ![Desktop home page wireframe image](assets/wireframes/index_dektop_logged_out.png) | ![Mobile index / home page wireframe image](assets/wireframes/index_mobile_logged_out.png)
 Sign Up | ![Desktop sign up wireframe image](assets/wireframes/signup_dektop.png) | ![Mobile sign up wireframe image](assets/wireframes/signup_mobile.png)
-Log In | ![Desktop log in wireframe image](assets/wireframes/login_dektop.png) | ![Mobile log in wireframe image](assets/wireframes/login_mobile.png)
+About us| ![Desktop about us in wireframe image](assets/wireframes/login_dektop.png) | ![Mobile about us page wireframe image](assets/wireframes/login_mobile.png)
 Index / User Logged In | ![Desktop index / user logged in wireframe image](assets/wireframes/index_dektop_logged_in.png) | ![Mobile index / user logged out wireframe image](assets/wireframes/index_mobile_logged_in.png)
 Ask Question | ![Desktop ask question wireframe image](assets/wireframes/ask_question_desktop.png) | ![Mobile ask question wireframe image](assets/wireframes/ask_question_mobile.png)
 Open Question | ![Desktop open question wireframe image](assets/wireframes/question_dektop.png) | ![Mobile open question wireframe image](assets/wireframes/question_mobile.png)
@@ -108,17 +108,255 @@ Leave Reply | ![Desktop leave reply wireframe image](assets/wireframes/leave_rep
 Navigation bar is featured on all pages at the top of the screen<br>
 This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via 'back button'<br>
 
+**For site visitors who are not logged in, the following are present in the navbar:**
+
+* Home and Forum links
+* Buttons for Register and Login
+
+**For logged in users, the following are present**
+
+* Home, Forum and Members links
+* Buttons for logout, create a Post and a button with their own username which opens their own profile to edit
+
+* Footer
+
+Consistent footer is present in all pages within the site which includes link to facebook, twitter and instagram
+
+* Landing Page
+
+Followed by the large hero map of the Beara peninsula, there is a brief introduction on the site and its purpose.
+
+* Post List page
+
+    This page is available to both site visitors without a log-in and registered users who are logged in.
+    All the posts which are reviewed and approved are listed in this page.
+    All the posts have buttons to View the post detail page which is only visible for users who are logged in.
+    Edit button is also present in the post list if the post was created by the user who is viewing the page.
+
+* Post Detail page
+
+    This page is available to everyone who are visting the site.
+    This page consists of a detailed view of the post which includes the content of the post, difficulty level and suitable dog size, in addition to the information displayed in the post list.
+    Also available on this page are other users' comments on this post. Only the approved comments are displayed on this page.
+    There is another function to allow other users to press the Like button and leave a comment regarding the post. The comment entered here need to be reviewed by the site owner before displayed in this post detail page.
+
+* Create a Post page
+
+    This page can be accessed by registered users who are logged in. Button link is located in the navbar for easy access to this page once logged in.
+    There are messages to let users know which fields are required to create a post. Title field has to be a unique one, therefore there is a placeholder in the title field with a message ‘Your unique post title’ to advise you to create a unique title.
+    Image upload is available but users can opt not to upload an image if they choose so.
+    Once the create button is pressed, users will be directed to the post list page and a message to inform the user about the post is displayed below the navbar.
+
+* Edit post page
+
+    Edit post page is accessed by edit post button which is available in either post list or post detail page for users who are logged in. The button is visible for the user's own post only so that the post can only be edited by its own user or by superuser using the admin page.
+
+    The required fields are identical to create post but all the entries of the post are retrieved so that users can edit only the field they wish to update.
+
+    This page also contains a delete the post link which will display the page to confirm their intention to delete the post.
+
+* Delete Post page
+
+    When the user presses ‘Delete This Post’ link from the edit post page, this Delete Post page displays and asks the user for confirmation to delete the post. Users can either click the Confirm Delete button or cancel and go back to Posts.
+    When the Confirm Delete button is pressed, the user will be redirected to the Post List page and 	a message will show below the navbar to inform that the post was deleted.
+
+* Members Page
+
+    This page can be accessed from the navigation bar menu.
+    The images and usernames of the registered users can be viewed on this page.
+    There is View profile button in very user’s panel which will open the user’s individual  profile page
+
+* Profile Detail page
+
+    This page can be accessed by the View Profile button in the Members page or Post detail page if the user has their post displayed in the page.
+    The page includes the image that the user posted and some brief description about them if they opted to enter any fields.
+    Each user’s empty profile is created when they register to the site so every registered user has their own profile, but they can leave all the fields blank if they wish.
+
+* Profile Edit page
+
+    This page is displayed when the user clicks the button with their username which is located in the navigation bar.
+    All the fields are optional so they can enter any field they wish to update and leave the rest as blank.
+    Once the profile is updated, the user will be directed to the post list page and a message will be displayed to inform the user that their profile is updated.
+
+ * About the Site page
+
+    This page can be accessed from any page within the site from the link in the footer. 
+    The page states which pages are accessible for users who are not logged in and what can registered and logged-in users can do on each page
+
+* Register page
+
+    This page can be opened from the register button in the navigation bar.
+    New site visitors are simply asked to enter username, password and password confirmation to register for the use of this site. Email field can be left blank as it is optional.
+    Once successfully registered, users will be redirected to the index page and have access to all the pages which are open for registered users.
+
+* Login page
+
+    Registered and returning users can use the login button to open the login page and supply their username and password to login.
+    On successful login, users will be redirected to the index page with a message to inform them that they logged in successfully and they can choose any options provided in the page.
+
+* Logout page
+
+    Once a user is logged in, the Login button in the navigation bar will be replaced with the Logout button.
+    Users can simply click this button to log out and confirm to sign out. This will display the home page with a message to inform that the user has successfully logged out.
+
 
 # 3. Testing <a name="testing"></a> 
 
+### Responsiveness 
+
+Throughout the site is tested to ensure all pages are displayed appropriately in all screen sizes
 
 
 
 # 4. Deployment <a name="deployment"></a> 
 
+### Deployment
+Here is the deployment procedure  that I have taken to deploy this project on Heroku
+
+1. In the Heroku dashboard, click new, then enter the app name and specify the region.
+
+2. In the Add-on section in the resources tab, search postgres, then select Heroku Postgres and submit order from button in the popup window.
+
+3. In the setting tab, click on Reveal Config Vars button then copy the value for DATABASE_URL key.
+
+4. Create env.py directly under the repo directory same lavel as manage.py and make sure the file name is included in .gitignore as this is a setting for local development site in Gitpod. 
+Heroku Config vars need to be set accordingly including DATABASE_URL and SECRET_KEY
+
+5. In setting.py file include followings:
+
+    import os
+    import dj_database_url
+    if os.path.isfile('env.py'):
+        import env
+    modify SECRET_KEY line to SECRET_KEY = os.
+    environ.get('SECRET_KEY')
+
+    Replace DATABASES as
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+6. In the Gitpod terminal, migrate the change by
+python3 manage.py migrate. Check the resource tab in heroku and choose 
+Heroku Postgres then ensure the changes are reflected in the database
+
+7. Login to Cloudinary and copy the API Environment variable and paste in env.py and also Config Vars in Heroku.
+
+8. DISABLE_COLLECTSTATIC set to 1 in Config Vars in Heroku as the initial deployment does not contain static files yet.
+
+9. In setting.py configure followings:
+ 
+    * Add 'cloudinary_storage', before 'django.contrib.staticfiles', and 'cloudinary' after it.
+
+    * Set STATICFILES_DIRS, STATICFILES_DIRS, STATIC_ROOT, MEDIA_URL and DEFAULT_FILE_STORAGE so that Django can use the directories appropriately.
+
+    * Set TEMPLATES_DIR just below BASE_DIR and insert TEMPLATES_DIR in TEMPLATES array
+    'DIRS': []
+
+    * Set ALLOWED_HOSTS array as 'tailsontrails.herokuapp.com', 'localhost'
+
+10. Create Procfile with the contents 
+
+    web: gunicorn tails_on_trails.wsgi
+
+11. In the deployment tab in Heroku page, connect to GitHub and search for the repository then Connect.
+
+    Click on Deploy Branch
+
+
+
 
 # 5. Technologies Used <a name="technology-used"></a>  <a name="Home"></a>
 ## Languages
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Libraries and Frameworks
+
+* [Django](https://www.djangoproject.com/)   
+    * Django was used as web framework.
+
+* [Django Template](https://jinja.palletsprojects.com)  
+    * Django Template was used as a templating language for Django to display backend data to HTML.
+   
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)  
+    * Bootstrap 5 was used throughout the website to help with styling and responsiveness.
+
+* [Google Fonts](https://fonts.google.com)  
+    * Google fonts was used to import the fonts into the html file, and were used on all parts of the site.
+
+* [Font Awesome](https://fontawesome.com)  
+    * Font Awesome was used throughout the website to add icons for aesthetic and UX purposes. 
+
+* [jQuery 3.6.0](https://jquery.com/)  
+    * jQuery was used as a JavaScript library to help writing less JavaScript code.  
+
+
+### Packages / Dependecies Installed
+
+* [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)  
+    * Django Allauth was used for user authentication, registration, and account management.
+
+* [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/)   
+    * Django Crispy Form was used to control the rendering of the forms. 
+ 
+* [Gunicorn](https://gunicorn.org/)  
+    * Gunicorn was used as Python WSGI HTTP Server for UNIX to support the deployment of Django application.  
+
+* [Summernote](https://summernote.org/) 
+    * Summernote has been used as WYSIWYG editor.
+
+* [Cloudinary](https://cloudinary.com/)
+    * Cloudinary has been used as image management solution
+
+### Database Management
+* [Heroku Postgres](https://www.heroku.com/postgres)   
+    * Heroku Postgres database was used in production, as a service based on PostgreSQL provided by Heroku.
+
+
+### Tools and Programs
+
+* [Git](https://git-scm.com)  
+    * Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub. 
+
+* [GitPod](https://gitpod.io/)
+     * GitPod was used for writing code, committing, and then pushing to GitHub.
+
+* [GitHub](https://github.com)  
+   GitHub was used to store the projects code after being pushed from Git. 
+
+* [Heroku](https://www.heroku.com)   
+    * Heroku was used to deploy the website.
+
+* [Am I Responsive](ami.responsivedesign.is)  
+    * Am I Responsive was used to preview the website across a variety of popular devices.
+
+* [Tiny PNG](https://tinypng.com)    
+    * Tiny PNG was used to reduce the file size of the images.
+
+* [Coolors](https://coolors.co)  
+    * Coolors was used to create a color scheme for the website.
+
+* [Balsamiq](https://balsamiq.com/)
+     * Balsamiq was used to create the wireframes during the design phase of the project
+
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    * Chrome DevTools was used during development process for code review and to test responsiveness.
+
+* [W3C Markup Validator](https://validator.w3.org/)
+    * W3C Markup Validator was used to validate the HTML code.
+
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    * W3C CSS Validator was used to validate the CSS code.
+
+* [JSHint](https://jshint.com/) 
+    * The JSHints JavaScript Code Quality Tool was used to validate the site's JavaScript code.
+
+* [Favicon.cc](https://www.favicon.cc/) 
+    * Favicon.cc was used to create the site favicon.
 
 
 
