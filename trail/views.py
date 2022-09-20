@@ -197,7 +197,7 @@ class ProfileDetail(LoginRequiredMixin, generic.DetailView):
 
 def Home(request):
     """
-        Renders the home page 
+    Renders the home page
 
     """
     return render(request, 'base.html')
