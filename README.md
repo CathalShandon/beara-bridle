@@ -77,8 +77,6 @@ To create an online blog about the different trails where user can login, view a
 
 7. As a **logged-in site user** I can **like and unlike** the **trails**
 
-8. 
-
 
 ## Website templates
 
@@ -205,6 +203,90 @@ Followed by the large hero map of the Beara peninsula, there is a brief introduc
 ### Responsiveness 
 
 Throughout the site is tested to ensure all pages are displayed appropriately in all screen sizes
+
+## Testing User Stories
+
+### 1. As a Site Admin I can create, read, update and delete trails and comments so that I can manage the site content
+
+* An admin site has been provided so that the Site Admin can manage trails and comments.
+
+* Trails and comments can be created, read, updated and deleted from the site.
+
+* Trails and comments main fields are being displayed for the Site Admin to identify them easily.
+
+* Trails and comments can be filtered and searched to narrow down a specific group.
+
+### 2. As a logged-in site user I can log out of my account so that other users cannot access my account.
+
+* Registered Site Users are give the option of logging out of website.
+
+* Registered Site Users are able to click on logout button which will be show another page.
+
+* Registered Site Users the are given the choice to click if they are sure they want to logout.
+
+* Registered Site Users are not able to gain any access of any other user account.
+
+### 3. As a Site User I can register an account so that I can create trails leave comments and like trails.
+
+* Account registration has been provided for Site User.
+
+* Registered Site Users are given the possibility to submit trails and comments.
+
+* Registered Site Users are able to edit and delete their own trails.
+
+* Registered Site Users are able to like and unlike trails.
+
+### 4.As a site user I can intuitively navigate the site so that the layout of the site is consistent.
+
+### 5.As a site user I can locate the social media accounts so that I can follow their updates.
+
+### 6.As a logged-in site user I can complete a comment on the trails so that other users can heard other peoples opinion.
+
+### 7.As a logged-in site user I can like and unlike the trails.
+
+
+## Code Validation
+
+### HTML
+
+The [W3C Markup Validator](https://validator.w3.org/) service was used to validate the HTML code of the project in order to ensure there were no syntax errors.
+
+![index.html validation](static/images/html_validation.png)
+
+
+### CSS
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was used to validate the CSS code of the project in order to ensure there were no syntax errors. 
+
+W3C CSS Validator found no errors or warnings on my CSS.
+
+![CSS validation image](static/images/css_validation.png)
+
+### Python
+
+Pylint was used continuously during the development process to analyze the Python code for programming errors.
+
+[PEP8 online](http://pep8online.com/) was further used to validate the Python code to validate the Python code for PEP8 requirements. See below the validation results and the reviewed results. 
+
+## Accessibility
+
+### Lighthouse Reports
+
+Lighthouse in Chrome DevTools has been used to confirm that the colors and fonts being used throughout the website are easy to read and accessible. See reports in the table below:
+
+
+## Manual Testing
+
+### Test Results
+
+#### General
+
+
+
+
+
+
+
 
 
 
