@@ -88,11 +88,11 @@ I used Balsamiq to create wireframes for my project in order to plan out the lay
 Page | Desktop Version | Mobile Version
 --- | --- | ---
 Home Page| ![Desktop home page wireframe image](assets/wireframes/index_dektop_logged_out.png) | ![Mobile index / home page wireframe image](assets/wireframes/index_mobile_logged_out.png)
-Sign Up | ![Desktop sign up wireframe image](assets/wireframes/signup_dektop.png) | ![Mobile sign up wireframe image](assets/wireframes/signup_mobile.png)
-About us| ![Desktop about us in wireframe image](assets/wireframes/login_dektop.png) | ![Mobile about us page wireframe image](assets/wireframes/login_mobile.png)
+Sign Up | ![Desktop sign up wireframe image](static/images/Signup_desktop.png) | ![Mobile sign up wireframe image](static/images/Signup_mobile.png)
+About us| ![Desktop about us in wireframe image](static/images/About_us_desktop.png) | ![Mobile about us page wireframe image](static/images/About_us_mobile.png)
 Index / User Logged In | ![Desktop index / user logged in wireframe image](assets/wireframes/index_dektop_logged_in.png) | ![Mobile index / user logged out wireframe image](assets/wireframes/index_mobile_logged_in.png)
-Ask Question | ![Desktop ask question wireframe image](assets/wireframes/ask_question_desktop.png) | ![Mobile ask question wireframe image](assets/wireframes/ask_question_mobile.png)
-Open Question | ![Desktop open question wireframe image](assets/wireframes/question_dektop.png) | ![Mobile open question wireframe image](assets/wireframes/question_mobile.png)
+Trail | ![Desktop ask question wireframe image](assets/wireframes/ask_question_desktop.png) | ![Mobile ask question wireframe image](static/images/Trail_mobile.png)
+Trail Post | ![Desktop open question wireframe image](static/images/Trail_post_desktop.png) | ![Mobile open question wireframe image](static/images/Trail_post_mobile.png)
 Leave Reply | ![Desktop leave reply wireframe image](assets/wireframes/leave_reply_desktop.png) | ![Mobile leave reply wireframe image](assets/wireframes/leave_reply_mobile.png)
 
 
@@ -268,6 +268,15 @@ Pylint was used continuously during the development process to analyze the Pytho
 
 [PEP8 online](http://pep8online.com/) was further used to validate the Python code to validate the Python code for PEP8 requirements. See below the validation results and the reviewed results. 
 
+| Location | Errors / Warnings | Code Reviewed |
+| --- | --- | --- |
+| admin.py | No errors / warnings |![admin.py code reviewed image](static/images/admin.png) |
+| forms.py | No errors / warnings| ![forms.py code reviewed image](static/images/form.png) |
+| models.py | No errors / warnings | ![models.py code reviewed image](static/images/) |
+| urls.py | No errors / warnings| ![urls.py code reviewed image](static/images/url.png) |
+| views.py | No errors / warnings| ![views.py code reviewed image](static/images/Views.png) |
+
+
 ## Accessibility
 
 ### Lighthouse Reports
@@ -277,9 +286,24 @@ Lighthouse in Chrome DevTools has been used to confirm that the colors and fonts
 
 ## Manual Testing
 
-### Test Results
+## Manual testing on each page.
 
-#### General
+Along with testing user stories manually, each page has been manually tested to ensure that the links and the contents are properly placed and functioning, and that all data entry is appropriately handled as expected. Page access is also tested for the restricted pages.
+
+Every link within the page has been checked to ensure that it displays the page appropriately.
+Visual inspections carried out to ensure that restricted page links or buttons are not visible on the page.
+
+#### Landing page
+
+**Users who have not logged in**  
+ They are presented with Login and Register buttons to the right of the navigation bar. Visual inspections are carried out to ensure that the buttons are displaying appropriately to logged in users and users who are not logged in a number of times.
+
+**Registered and logged in users**
+
+ On the opening page, they can click on Login to open the Login page. After successful login, manual testing took place to ensure that the message of successful login is displayed and Register and Login buttons are replaced by three buttons which are, 'Create a Post', 'Username' and 'Logout'. Visual inspection to ensure there is a Members link beside the Forum menu on the left is added to the menu.
+ Each button and link is manually tested to ensure it opens the appropriate page 
+
+
 
 
 
