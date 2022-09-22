@@ -7,7 +7,7 @@ This maritime influence allows subtropical trees and shrubs to escape domesticit
 The Beara Bridle Way is a  linear route. Riders can start in Clonglaskin west of Castletownbere or in Allihies or Urhan. There is a short loop route in Allihies and plans are in place two extend the trail and make three loops. Parking is available in Clonglaskin, Allihies , by the Urhan  Inn  and Travara beach  .
 
 **View the live site [here](https://beara-bridle-trail.herokuapp.com/)**
-![Beara Horse Trail mockup images](static/images/Screenshot 2022-09-21 at 19.42.11.png)
+![Beara Horse Trail mockup images](static/images/mockup.png)
 
 
 
@@ -91,7 +91,7 @@ Page | Desktop Version | Mobile Version
 --- | --- | ---
 About us| ![Desktop about us in wireframe image](static/images/About_us_desktop.png) | ![Mobile about us page wireframe image](static/images/About_us_mobile.png)
 Sign Up | ![Desktop sign up wireframe image](static/images/Signup_desktop.png) | ![Mobile sign up wireframe image](static/images/Signup_mobile.png)
-Trail | ![Desktop ask question wireframe image](assets/wireframes/ask_question_desktop.png) | ![Mobile ask question wireframe image](static/images/Trail_mobile.png)
+Trail | ![Desktop ask question wireframe image](static/images/trail_desktop.png) | ![Mobile ask question wireframe image](static/images/Trail_mobile.png)
 Trail Post | ![Desktop open question wireframe image](static/images/Trail_post_desktop.png) | ![Mobile open question wireframe image](static/images/Trail_post_mobile.png)
 
 
@@ -235,18 +235,28 @@ Throughout the site is tested to ensure all pages are displayed appropriately in
 
 ### 4.As a site user I can intuitively navigate the site so that the layout of the site is consistent.
 
-* 
+* The site is easy to naviagte and easy to use across all devices.
 
 ### 5.As a site user I can locate the social media accounts so that I can follow their updates.
 
-* 
+* The links facebook, twitter all allow users to click on and follow the creators more on social media
 
 ### 6.As a logged-in site user I can complete a comment on the trails so that other users can heard other peoples opinion.
 
-* 
+* A Leave comments on trail page has been provided for registered Site Users.
+
+* A comment form is available in the trail post page for the Site Users to be able to comment on the trail posts.
+
+* A leave comment button is displayed to the registered Site Users under the trail content inside the trail page.
+ 
+
 ### 7.As a logged-in site user I can like and unlike the trails.
 
-* 
+* Like and unlike buttons are provided for registered Site Users next to each trail.
+
+* Registered Site Users can like or unlike others trails.
+
+
 
 ## Code Validation
 
