@@ -7,6 +7,8 @@ This maritime influence allows subtropical trees and shrubs to escape domesticit
 The Beara Bridle Way is a  linear route. Riders can start in Clonglaskin west of Castletownbere or in Allihies or Urhan. There is a short loop route in Allihies and plans are in place two extend the trail and make three loops. Parking is available in Clonglaskin, Allihies , by the Urhan  Inn  and Travara beach  .
 
 **View the live site [here](https://beara-bridle-trail.herokuapp.com/)**
+![Beara Horse Trail mockup images](static/images/Screenshot 2022-09-21 at 19.42.11.png)
+
 
 
 # Table of Contents <a name="Home"></a>
@@ -87,15 +89,10 @@ To create an online blog about the different trails where user can login, view a
 I used Balsamiq to create wireframes for my project in order to plan out the layout of the interface, navigation and information design of the site on desktop, tablets and mobile devices.
 Page | Desktop Version | Mobile Version
 --- | --- | ---
-Home Page| ![Desktop home page wireframe image](assets/wireframes/index_dektop_logged_out.png) | ![Mobile index / home page wireframe image](assets/wireframes/index_mobile_logged_out.png)
-Sign Up | ![Desktop sign up wireframe image](static/images/Signup_desktop.png) | ![Mobile sign up wireframe image](static/images/Signup_mobile.png)
 About us| ![Desktop about us in wireframe image](static/images/About_us_desktop.png) | ![Mobile about us page wireframe image](static/images/About_us_mobile.png)
-Index / User Logged In | ![Desktop index / user logged in wireframe image](assets/wireframes/index_dektop_logged_in.png) | ![Mobile index / user logged out wireframe image](assets/wireframes/index_mobile_logged_in.png)
+Sign Up | ![Desktop sign up wireframe image](static/images/Signup_desktop.png) | ![Mobile sign up wireframe image](static/images/Signup_mobile.png)
 Trail | ![Desktop ask question wireframe image](assets/wireframes/ask_question_desktop.png) | ![Mobile ask question wireframe image](static/images/Trail_mobile.png)
 Trail Post | ![Desktop open question wireframe image](static/images/Trail_post_desktop.png) | ![Mobile open question wireframe image](static/images/Trail_post_mobile.png)
-Leave Reply | ![Desktop leave reply wireframe image](assets/wireframes/leave_reply_desktop.png) | ![Mobile leave reply wireframe image](assets/wireframes/leave_reply_mobile.png)
-
-
 
 
 # 2. Features <a name="features"></a> 
@@ -238,12 +235,18 @@ Throughout the site is tested to ensure all pages are displayed appropriately in
 
 ### 4.As a site user I can intuitively navigate the site so that the layout of the site is consistent.
 
+* 
+
 ### 5.As a site user I can locate the social media accounts so that I can follow their updates.
+
+* 
 
 ### 6.As a logged-in site user I can complete a comment on the trails so that other users can heard other peoples opinion.
 
+* 
 ### 7.As a logged-in site user I can like and unlike the trails.
 
+* 
 
 ## Code Validation
 
@@ -272,16 +275,12 @@ Pylint was used continuously during the development process to analyze the Pytho
 | --- | --- | --- |
 | admin.py | No errors / warnings |![admin.py code reviewed image](static/images/admin.png) |
 | forms.py | No errors / warnings| ![forms.py code reviewed image](static/images/form.png) |
-| models.py | No errors / warnings | ![models.py code reviewed image](static/images/) |
+| models.py | No errors / warnings | ![models.py code reviewed image](static/images/model.png) |
 | urls.py | No errors / warnings| ![urls.py code reviewed image](static/images/url.png) |
 | views.py | No errors / warnings| ![views.py code reviewed image](static/images/Views.png) |
 
 
 ## Accessibility
-
-### Lighthouse Reports
-
-Lighthouse in Chrome DevTools has been used to confirm that the colors and fonts being used throughout the website are easy to read and accessible. See reports in the table below:
 
 
 ## Manual Testing
@@ -303,15 +302,122 @@ Visual inspections carried out to ensure that restricted page links or buttons a
  On the opening page, they can click on Login to open the Login page. After successful login, manual testing took place to ensure that the message of successful login is displayed and Register and Login buttons are replaced by three buttons which are, 'Create a Post', 'Username' and 'Logout'. Visual inspection to ensure there is a Members link beside the Forum menu on the left is added to the menu.
  Each button and link is manually tested to ensure it opens the appropriate page 
 
+ #### Post List page
 
+**For site visitor who has not logged in**
 
+Visual inspections are carried out so that no links to the post detail page or edit post are present in each post in the list. 
+Ensure that all the posts displayed in the page are approved posts and information displayed is correct as created post
 
+**For registered and logged in users**
 
+Ensure the post list is only displaying approved posts with correct information entered by the user.
+A View button is present in each post and links will open the selected post detail page.
+For a currently logged in user’s own post, an Edit button is present in the post panel and selecting it will open the ‘Edit’ post page with selected post entry retrieved.
 
+#### Post Detail page
 
+**For a site visitor who has not logged in**
 
+Access is attempted by copying the individual post address to ensure that the page is not displayed for the site visitors who are not logged in.
 
+**For registered and logged in users**
 
+Visually inspected all post entries are correctly retrieved and displayed in the post.
+A View Profile button opens the selected users profile page.
+Ensure that the clicking like button increments the number only once and selecting it again removes the count by one.
+When submitting a comment, the feedback message displays in the comment panel so that the user is notified about the status of their comment.
+Once approved by superuser, the number of the comment increments by one and the comment displays in the Comments panel
+
+#### Create a Post page
+
+**For site visitor who has not logged in**
+
+Access is attempted by copying the page address to ensure that the page is not displayed for the site visitors who are not logged in.
+
+**For registered and logged in users**
+
+Entering an existing title field will return the error message to prompt the user to enter another title.
+Attempting to create a post with a blank required field returns an error message.
+File upload is successful without any issue.
+When ‘Create button’ is pressed and entry is successful, the page will redirect to ‘post list page’ with a message to notify the user about the status of the post
+
+#### Edit post page
+
+**For site visitor who has not logged in**
+Access is attempted by copying the page address to ensure that the page is not displayed for the site visitors who are not logged in.
+
+**For registered and logged in users** 
+
+Displayed edit post page has corresponding selected post entries in each field.
+Removing the required fields does not let a user to update the post.
+An Error message is used to inform users if a required field is left blank or an attempt to update is not showing at the moment.
+Upon successful update,  the page redirects to the post list page with a message to inform the users the update was successful.
+Delete this post link opens Delete post page
+
+#### Delete Post page
+
+**For site visitor who has not logged in**
+
+Access is attempted by copying the page address to ensure that the page is not displayed for the site visitors who are not logged in. 
+
+**For registered and logged in users**
+Cancel and go back to post link opens the post list.
+Pressing Confirm Delete button actually deletes the selected post and associated comments and then returns post list page with message to notify the user the post is deleted
+
+#### Members Page
+
+**For site visitor who has not logged in**
+
+Access is attempted by copying the page address to ensure that the page is not displayed for the site visitors who are not logged in.
+
+**For registered and logged in users**
+
+Page displays with each member in a panel with their image, name and button to open their individual profile page.
+A Button to open individual profile page opens the profile of the selected member.
+
+#### View profile page
+
+**For site visitor who has not logged in**
+
+Access is attempted by copying the page address to ensure that the page is not displayed for the site visitors who are not logged in.
+
+**For registered and logged in users**
+
+A user’s profile page displays when selected.
+
+A 'Back to profile list' link returns to the Member page
+
+#### Profile Edit page
+
+**For site visitor who has not logged in**
+
+Access is attempted by copying the page address to ensure that the page is not displayed for the site visitors who are not logged in.
+
+**For registered and logged in users**
+On pressing their 'username' button in the navigation bar, their own profile page opens for editing.
+Upload the image works without any issues.
+As all the fields are optional there is no error message present.
+Successful update will redirect to 'Post list' page with a notification message 
+
+#### About the Site page
+
+Page displays for any site visitors and information provided is clear
+
+#### Register page
+
+Tested all validation works without any issues.
+Ensure that an existing username cannot be registered and returns the error.
+Password validations are in place.
+Upon successful registration, the user is redirected to landing page with a notification for their login
+
+#### Login page
+
+Various usernames are used for login attempt and to ensure the login process meets the standard.
+Upon successful login, the user is redirected to landing page with a notification for their login
+
+#### Logout page
+Ensure logout will redirect to the landing page with a notification for their logout and restricted pages cannot be accessed.
 
 
 # 4. Deployment <a name="deployment"></a> 
@@ -368,8 +474,6 @@ Heroku Postgres then ensure the changes are reflected in the database
 11. In the deployment tab in Heroku page, connect to GitHub and search for the repository then Connect.
 
     Click on Deploy Branch
-
-
 
 
 # 5. Technologies Used <a name="technology-used"></a>  <a name="Home"></a>
@@ -465,7 +569,6 @@ Heroku Postgres then ensure the changes are reflected in the database
     * Favicon.cc was used to create the site favicon.
 
 
-
 # 6. Credits <a name="credits"></a>
 See below list of tutorials and documentation i used throughout this project
 - The basic skelton setup for this project was based on  “I think therefore I blog project by the Code Institute 
@@ -473,3 +576,5 @@ See below list of tutorials and documentation i used throughout this project
 
 
 # 7. Acknowledgements <a name="acknowledgements"></a>
+I would like to thank Code Institute and its amazing Slack community for their support and providing me with the necessary knowledge to complete this project.
+I would also like to thank my tutor Marcel for his invaluable support, feedback and guidance through the whole process.
